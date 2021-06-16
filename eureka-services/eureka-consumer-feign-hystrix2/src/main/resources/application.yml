@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka-consumer-feign-hystrix2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
+server:
+  port: 9004
+#�����۶���
+feign:
+  hystrix:
+    enabled: true
+#��ص�ʵ���ڵ�endpoint��Hystrix Dashboard ��ص�ʵ���ڵ���Ҫͨ������ʵ����/actuator/hystrix.stream�ӿ���ʵ��
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
